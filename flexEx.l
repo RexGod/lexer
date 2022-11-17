@@ -16,7 +16,7 @@ Floatingpoint ({Digit}*\.{Digit}*)
 Comment "//"{Anything}*|"/*"{Anything}"*/"
 %%
 
-{WhiteSpace}|{Comment};
+{WhiteSpace} {  }
 {Keyword} {
         printf("keyword: %s\n", yytext);
 }
@@ -32,6 +32,7 @@ Comment "//"{Anything}*|"/*"{Anything}"*/"
 {Floatingpoint} {
 	printf("floatingpoint: %s\n", yytext);
 }
+{Comment} { }
 . {
 	printf("undefine lexeme: %s\n\n", yytext);
 }
