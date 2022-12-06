@@ -17,8 +17,11 @@ Comment "//"{Anything}*|"/*"{Anything}"*/"
 %%
 
 {WhiteSpace} {  }
+{Digit} {
+	printf("integer numerical: %s\n" , yytext);
+}
 {Keyword} {
-        printf("keyword: %s\n", yytext);
+    printf("keyword: %s\n", yytext);
 }
 {Identifier} {
 	printf("identifier: %s\n" , yytext);
